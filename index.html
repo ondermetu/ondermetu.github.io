@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Önder Sönmez | Principal Optical / Opto-Mechanical Engineer</title>
+    <title>Önder Sönmez | Principal Opto-Mechanical Engineer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js CDN for Interactive Optical Simulation Graphs -->
@@ -15,38 +15,40 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
 
-    <!-- Header / Navbar -->
+    <!-- Header / Navbar & Language Switcher -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="font-bold text-lg tracking-wider text-sky-400">ÖS // OPTICS</a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
                 <a href="#about" class="nav-about hover:text-sky-400 transition">01. About</a>
-                <a href="#expertise" class="nav-expertise hover:text-sky-400 transition">02. Expertise</a>
+                <a href="#experience" class="nav-exp hover:text-sky-400 transition">02. Experience</a>
                 <a href="#simulation" class="nav-sim hover:text-sky-400 transition">03. Interactive Optics</a>
-                <a href="#projects" class="nav-projects hover:text-sky-400 transition">04. Projects</a>
+                <a href="#projects" class="nav-proj hover:text-sky-400 transition">04. Projects</a>
                 <a href="#contact" class="nav-contact hover:text-sky-400 transition">05. Contact</a>
             </nav>
-            <!-- Language Toggle Button -->
-            <button onclick="toggleLanguage()" id="langBtn" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-semibold text-sky-400 hover:bg-slate-800 transition">
-                DE / EN
-            </button>
+            <!-- Language Selector -->
+            <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-lg p-1 text-xs">
+                <button onclick="setLanguage('en')" id="btn-en" class="px-2 py-1 rounded bg-sky-500 text-slate-950 font-bold transition">EN</button>
+                <button onclick="setLanguage('de')" id="btn-de" class="px-2 py-1 rounded text-slate-400 hover:text-white transition">DE</button>
+                <button onclick="setLanguage('ar')" id="btn-ar" class="px-2 py-1 rounded text-slate-400 hover:text-white transition">AR</button>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-6">
-            <span>●</span> <span id="hero-badge">PRINCIPAL OPTICAL / OPTO-MECHANICAL ENGINEER · JENA, GERMANY</span>
+            <span>●</span> <span id="hero-badge">PRINCIPAL OPTO-MECHANICAL ENGINEER</span>
         </div>
-        <h1 id="hero-title" class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-            Bridging Optical Physics <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">and Precision Mechanical Engineering.</span>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+            <span id="hero-title-1">Shaping the Future Through</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500" id="hero-title-2">Optical Design & Multi-Physics Engineering.</span>
         </h1>
-        <p id="hero-desc" class="text-slate-400 text-lg max-w-2xl mb-10 leading-relaxed">
-            Specialized in advanced optomechanical system design, thermal-structural-optical performance (STOP) analysis, and automated Zemax/Python engineering pipelines for high-reliability defense and aerospace applications.
+        <p class="text-slate-400 text-lg max-w-2xl mb-10 leading-relaxed" id="hero-desc">
+            Developing high-performance optomechanical systems under severe environmental loads using Zemax OpticStudio, COMSOL Multiphysics, and Python automation pipelines.
         </p>
         <div class="flex gap-4">
-            <a href="#simulation" id="btn-sim" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition">Explore Interactive Model</a>
-            <a href="#contact" id="btn-contact" class="px-6 py-3 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold transition">Get in Touch</a>
+            <a href="#simulation" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold transition" id="btn-sim-link">Try Interactive Sim</a>
+            <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold transition" id="btn-contact-link">Get in Touch</a>
         </div>
     </section>
 
@@ -55,31 +57,50 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <span class="text-sky-400 text-xs font-semibold tracking-wider">// 01. ABOUT ME</span>
-                <h2 id="about-h2" class="text-3xl font-bold mt-2 mb-4">First-Principles Approach to Complex Optomechanics</h2>
-                <p id="about-p1" class="text-slate-400 text-sm leading-relaxed mb-4">
-                    With extensive hands-on R&amp;D experience across Europe and international technology sectors, I architect optical systems that maintain sub-micron alignment under severe environmental stressors (thermal shifts, vibrational loads, and shock).
+                <h2 class="text-3xl font-bold mt-2 mb-6" id="about-title">Bridging First-Principles Physics with Advanced Engineering</h2>
+                <p class="text-slate-400 leading-relaxed mb-4" id="about-text-1">
+                    With extensive experience as a Senior Optical Design Researcher and Principal Engineer, I specialize in architecting complex optomechanical subsystems including HUDs, FSO, and WSS devices. My approach merges rigorous thermal-structural-optical performance (STOP) analysis with practical cleanroom execution.
                 </p>
-                <p id="about-p2" class="text-slate-400 text-sm leading-relaxed">
-                    Certified as a Laser Safety Officer (LSO) with deep expertise in cleanroom protocols, ISO 10110 optical drawings, and multi-physics simulation workflows combining COMSOL and Zemax OpticStudio.
+                <p class="text-slate-400 leading-relaxed" id="about-text-2">
+                    Certified as a Laser Safety Officer (LSO) with a strong foundation in physics and mechanical engineering, I build automated pipelines that bridge simulation tools with real-world hardware realization.
                 </p>
             </div>
             <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-4">
-                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                    <span id="label-loc" class="text-xs text-slate-500 font-medium">LOCATION</span>
-                    <span class="text-sm font-semibold text-slate-200">Jena, Germany</span>
+                <h3 class="font-bold text-sky-400 text-sm tracking-wider" id="core-competencies">CORE COMPETENCIES</h3>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">Zemax OpticStudio</span>
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">COMSOL &amp; ANSYS FEA</span>
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">Python Automation</span>
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">STOP Analysis</span>
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">ISO 10110 / MIL-STD-810G</span>
+                    <span class="px-3 py-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300">SolidWorks CAD</span>
                 </div>
-                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                    <span id="label-core" class="text-xs text-slate-500 font-medium">CORE FOCUS</span>
-                    <span class="text-sm font-semibold text-slate-200">HUD, FSO &amp; WSS Systems</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                    <span id="label-tools" class="text-xs text-slate-500 font-medium">PRIMARY STACK</span>
-                    <span class="text-sm font-semibold text-slate-200">Zemax, SolidWorks, Python, COMSOL</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span id="label-lang" class="text-xs text-slate-500 font-medium">LANGUAGES</span>
-                    <span class="text-sm font-semibold text-slate-200">English (C1), German (B1), Turkish (Native)</span>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-900">
+        <div class="mb-12">
+            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 02. CAREER PATH</span>
+            <h2 class="text-3xl font-bold mt-2" id="exp-heading">Professional Experience</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
+                <span class="text-xs text-sky-400 font-semibold">2022 — 2026</span>
+                <h3 class="text-xl font-bold mt-1">Senior Optical Design Researcher</h3>
+                <p class="text-slate-400 text-sm mt-2">Huawei Jena Research Center, Germany</p>
+                <p class="text-slate-400 text-sm mt-3 leading-relaxed" id="exp-1-desc">
+                    Technical owner for optomechanical subsystems in Head-Up Displays (HUD), Free Space Optics (FSO), and Wavelength Selective Switching (WSS) devices. Awarded Significant Business Contribution Award.
+                </p>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
+                <span class="text-xs text-indigo-400 font-semibold">2026 — Present</span>
+                <h3 class="text-xl font-bold mt-1">Principal Optical Engineer</h3>
+                <p class="text-slate-400 text-sm mt-2">TDK Alsight, Jena, Germany</p>
+                <p class="text-slate-400 text-sm mt-3 leading-relaxed" id="exp-2-desc">
+                    Focusing on advanced optical system development, custom optomechanical architecture, and building internal RCWA modeling pipelines in Zemax and Python.
+                </p>
             </div>
         </div>
     </section>
@@ -87,24 +108,24 @@
     <!-- Interactive Optical Simulation Section (MTF / Defocus / Temperature) -->
     <section id="simulation" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-900">
         <div class="mb-12">
-            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 03. INTERACTIVE OPTICAL ANALYSIS</span>
-            <h2 id="sim-title" class="text-3xl font-bold mt-2">Dynamic MTF Degradation under Thermal &amp; Defocus Loads</h2>
-            <p id="sim-desc" class="text-slate-400 text-sm mt-1">Adjust the sliders below to simulate real-time optomechanical performance variations driven by temperature shifts and focal plane displacement.</p>
+            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 03. INTERACTIVE OPTICS</span>
+            <h2 class="text-3xl font-bold mt-2" id="sim-title">MTF Variation under Temperature &amp; Defocus</h2>
+            <p class="text-slate-400 text-sm mt-1" id="sim-desc">Use the sliders to analyze how optical performance shifts across thermal changes and focal plane displacements.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-slate-900/50 border border-slate-800 p-6 rounded-2xl">
             <!-- Controls -->
             <div class="space-y-6 flex flex-col justify-center">
                 <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2"><span id="lbl-temp">Temperature</span> (°C): <span id="tempVal" class="text-sky-400 font-bold">20</span>°C</label>
+                    <label class="block text-sm font-medium text-slate-300 mb-2"><span id="label-temp">Temperature</span> (°C): <span id="tempVal" class="text-sky-400 font-bold">20</span>°C</label>
                     <input type="range" id="tempSlider" min="-40" max="80" value="20" class="w-full accent-sky-500 cursor-pointer">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2"><span id="lbl-defocus">Defocus / Focal Shift</span> (µm): <span id="defocusVal" class="text-indigo-400 font-bold">0</span> µm</label>
+                    <label class="block text-sm font-medium text-slate-300 mb-2"><span id="label-defocus">Defocus / Focal Shift</span> (µm): <span id="defocusVal" class="text-indigo-400 font-bold">0</span> µm</label>
                     <input type="range" id="defocusSlider" min="-50" max="50" value="0" class="w-full accent-indigo-500 cursor-pointer">
                 </div>
-                <div id="sim-note" class="p-4 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-400">
-                    <span class="text-sky-400 font-semibold">Note:</span> Models refractive index thermal coefficients (dn/dT) alongside structural expansion to evaluate contrast transmission.
+                <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-400" id="sim-note">
+                    <span class="text-sky-400 font-semibold">Note:</span> Simulates thermal expansion coefficients and refractive index changes (dn/dT) affecting system MTF response in real-time.
                 </div>
             </div>
 
@@ -118,22 +139,22 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-900">
         <div class="mb-12">
-            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 04. FEATURED PROJECTS &amp; R&amp;D</span>
-            <h2 id="proj-title" class="text-3xl font-bold mt-2">Core Engineering Pipelines &amp; Systems</h2>
+            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 04. SELECTED PROJECTS</span>
+            <h2 class="text-3xl font-bold mt-2" id="proj-heading">Optomechanical &amp; Simulation Pipelines</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition">
-                <span class="text-xs text-sky-400 font-semibold">STOP ANALYSIS &amp; PYTHON AUTOMATION</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">Automated Multi-Physics STOP Pipeline</h3>
-                <p id="proj1-desc" class="text-slate-400 text-sm leading-relaxed">
-                    Custom Python orchestration framework linking COMSOL FEA thermal-structural deformation outputs directly into Zemax OpticStudio via Zernike polynomial surface fitting for automated MTF optimization.
+                <span class="text-xs text-sky-400 font-semibold">STOP ANALYSIS &amp; PYTHON</span>
+                <h3 class="text-xl font-bold mt-2 mb-3" id="proj-1-title">Automated Multi-Physics STOP Pipeline</h3>
+                <p class="text-slate-400 text-sm leading-relaxed" id="proj-1-desc">
+                    Coupling COMSOL Multiphysics thermal-structural outputs via Python scripts into Zemax OpticStudio surface sag grids using Zernike polynomial fitting for automated MTF optimization.
                 </p>
             </div>
             <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition">
-                <span class="text-xs text-indigo-400 font-semibold">HUD &amp; FREE SPACE OPTICS</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">Athermalized Optomechanical Subsystems</h3>
-                <p id="proj2-desc" class="text-slate-400 text-sm leading-relaxed">
-                    Technical ownership of ruggedized optomechanical housings for Head-Up Displays (HUD) and Wavelength Selective Switching (WSS) devices meeting strict environmental standards.
+                <span class="text-xs text-indigo-400 font-semibold">HUD &amp; FSO SUBSYSTEMS</span>
+                <h3 class="text-xl font-bold mt-2 mb-3" id="proj-2-title">Head-Up Display Optomechanical Architecture</h3>
+                <p class="text-slate-400 text-sm leading-relaxed" id="proj-2-desc">
+                    Technical leadership and mechanical design of wide-FOV HUD optical assemblies ensuring stable alignment under severe vibration and thermal cycling (MIL-STD-810G).
                 </p>
             </div>
         </div>
@@ -141,11 +162,11 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-900 text-center">
-        <h2 id="contact-title" class="text-3xl font-bold mb-4">Let's Discuss Opportunities</h2>
-        <p id="contact-desc" class="text-slate-400 max-w-xl mx-auto mb-8">
-            Open to Principal-level engineering roles, high-impact technical leadership, and innovative defense/optics collaborations.
+        <h2 class="text-3xl font-bold mb-4" id="contact-heading">Let's Discuss Your Next Project</h2>
+        <p class="text-slate-400 max-w-xl mx-auto mb-8" id="contact-desc">
+            Open for Principal optomechanical engineering positions, technical consultancy, or high-end collaborative system designs.
         </p>
-        <a href="mailto:ondermetu@gmail.com" class="px-8 py-4 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition inline-block">
+        <a href="mailto:ondermetu@gmail.com" class="px-8 py-4 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition inline-block" id="contact-btn">
             Send an Email
         </a>
     </section>
@@ -155,106 +176,167 @@
         © 2026 Önder Sönmez · Principal Opto-Mechanical Engineer
     </footer>
 
-    <!-- Interactive Scripts & Multi-language Support -->
+    <!-- Multilingual Dictionary & Interactive Script -->
     <script>
-        // Language Data
         const translations = {
             en: {
                 navAbout: "01. About",
-                navExp: "02. Expertise",
+                navExp: "02. Experience",
                 navSim: "03. Interactive Optics",
                 navProj: "04. Projects",
                 navContact: "05. Contact",
-                heroBadge: "PRINCIPAL OPTO-MECHANICAL ENGINEER · JENA, GERMANY",
-                heroTitle: "Bridging Optical Physics <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500'>and Precision Mechanical Engineering.</span>",
-                heroDesc: "Specialized in advanced optomechanical system design, thermal-structural-optical performance (STOP) analysis, and automated Zemax/Python engineering pipelines for high-reliability defense and aerospace applications.",
-                btnSim: "Explore Interactive Model",
-                btnContact: "Get in Touch",
-                aboutH2: "First-Principles Approach to Complex Optomechanics",
-                aboutP1: "With extensive hands-on R&D experience across Europe and international technology sectors, I architect optical systems that maintain sub-micron alignment under severe environmental stressors (thermal shifts, vibrational loads, and shock).",
-                aboutP2: "Certified as a Laser Safety Officer (LSO) with deep expertise in cleanroom protocols, ISO 10110 optical drawings, and multi-physics simulation workflows combining COMSOL and Zemax OpticStudio.",
-                lblLoc: "LOCATION",
-                lblCore: "CORE FOCUS",
-                lblTools: "PRIMARY STACK",
-                lblLang: "LANGUAGES",
-                simTitle: "Dynamic MTF Degradation under Thermal & Defocus Loads",
-                simDesc: "Adjust the sliders below to simulate real-time optomechanical performance variations driven by temperature shifts and focal plane displacement.",
-                lblTemp: "Temperature",
-                lblDefocus: "Defocus / Focal Shift",
-                simNote: "<span class='text-sky-400 font-semibold'>Note:</span> Models refractive index thermal coefficients (dn/dT) alongside structural expansion to evaluate contrast transmission.",
-                projTitle: "Core Engineering Pipelines & Systems",
-                proj1Desc: "Custom Python orchestration framework linking COMSOL FEA thermal-structural deformation outputs directly into Zemax OpticStudio via Zernike polynomial surface fitting for automated MTF optimization.",
-                proj2Desc: "Technical ownership of ruggedized optomechanical housings for Head-Up Displays (HUD) and Wavelength Selective Switching (WSS) devices meeting strict environmental standards.",
-                contactTitle: "Let's Discuss Opportunities",
-                contactDesc: "Open to Principal-level engineering roles, high-impact technical leadership, and innovative defense/optics collaborations.",
-                btnEmail: "Send an Email"
+                heroBadge: "PRINCIPAL OPTO-MECHANICAL ENGINEER",
+                heroTitle1: "Shaping the Future Through",
+                heroTitle2: "Optical Design & Multi-Physics Engineering.",
+                heroDesc: "Developing high-performance optomechanical systems under severe environmental loads using Zemax OpticStudio, COMSOL Multiphysics, and Python automation pipelines.",
+                btnSimLink: "Try Interactive Sim",
+                btnContactLink: "Get in Touch",
+                aboutTitle: "Bridging First-Principles Physics with Advanced Engineering",
+                aboutText1: "With extensive experience as a Senior Optical Design Researcher and Principal Engineer, I specialize in architecting complex optomechanical subsystems including HUDs, FSO, and WSS devices. My approach merges rigorous thermal-structural-optical performance (STOP) analysis with practical cleanroom execution.",
+                aboutText2: "Certified as a Laser Safety Officer (LSO) with a strong foundation in physics and mechanical engineering, I build automated pipelines that bridge simulation tools with real-world hardware realization.",
+                coreCompetencies: "CORE COMPETENCIES",
+                expHeading: "Professional Experience",
+                exp1Desc: "Technical owner for optomechanical subsystems in Head-Up Displays (HUD), Free Space Optics (FSO), and Wavelength Selective Switching (WSS) devices. Awarded Significant Business Contribution Award.",
+                exp2Desc: "Focusing on advanced optical system development, custom optomechanical architecture, and building internal RCWA modeling pipelines in Zemax and Python.",
+                simTitle: "MTF Variation under Temperature & Defocus",
+                simDesc: "Use the sliders to analyze how optical performance shifts across thermal changes and focal plane displacements.",
+                labelTemp: "Temperature",
+                labelDefocus: "Defocus / Focal Shift",
+                simNote: "Note: Simulates thermal expansion coefficients and refractive index changes (dn/dT) affecting system MTF response in real-time.",
+                projHeading: "Optomechanical & Simulation Pipelines",
+                proj1Title: "Automated Multi-Physics STOP Pipeline",
+                proj1Desc: "Coupling COMSOL Multiphysics thermal-structural outputs via Python scripts into Zemax OpticStudio surface sag grids using Zernike polynomial fitting for automated MTF optimization.",
+                proj2Title: "Head-Up Display Optomechanical Architecture",
+                proj2Desc: "Technical leadership and mechanical design of wide-FOV HUD optical assemblies ensuring stable alignment under severe vibration and thermal cycling (MIL-STD-810G).",
+                contactHeading: "Let's Discuss Your Next Project",
+                contactDesc: "Open for Principal optomechanical engineering positions, technical consultancy, or high-end collaborative system designs.",
+                contactBtn: "Send an Email"
             },
             de: {
                 navAbout: "01. Über mich",
-                navExp: "02. Expertise",
+                navExp: "02. Erfahrung",
                 navSim: "03. Interaktive Optik",
                 navProj: "04. Projekte",
                 navContact: "05. Kontakt",
-                heroBadge: "LEITENDER OPTO-MECHANIK-INGENIEUR · JENA, DEUTSCHLAND",
-                heroTitle: "Verbindung von Optischer Physik <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500'>und Präzisions-Maschinenbau.</span>",
-                heroDesc: "Spezialisiert auf fortgeschrittenes optomechanisches Systemdesign, thermisch-strukturelle-optische Leistungsanalyse (STOP) und automatisierte Zemax/Python-Engineeringspipelines für hrlverlässige Anwendungen.",
-                btnSim: "Interaktives Modell testen",
-                btnContact: "Kontakt aufnehmen",
-                aboutH2: "Erste-Prinzipien-Ansatz für komplexe Optomechanik",
-                aboutP1: "Mit umfassender F&E-Erfahrung in Europa konzipiere ich optische Systeme, die unter extremen Umweltbelastungen (Temperaturschwankungen, Vibrationen) eine sub-Mikrometer-Ausrichtung gewährleisten.",
-                aboutP2: "Zertifizierter Laserschutzbeauftragter (LSO) mit tiefgreifender Expertise in Reinraumprotokollen, ISO 10110-Zeichnungen und Multiphasen-Simulationen (COMSOL & Zemax).",
-                lblLoc: "STANDORT",
-                lblCore: "SCHWERPUNKT",
-                lblTools: "HAUPT-STACK",
-                lblLang: "SPRACHEN",
-                simTitle: "Dynamischer MTF-Abfall unter Thermik- und Defocus-Lasten",
-                simDesc: "Regeln Sie die Schieberegler, um Echtzeit-Leistungsänderungen durch Temperatur- und Fokusverschiebung zu simulieren.",
-                lblTemp: "Temperatur",
-                lblDefocus: "Defocus / Fokusverschiebung",
-                simNote: "<span class='text-sky-400 font-semibold'>Hinweis:</span> Modelliert thermo-optische Koeffizienten (dn/dT) und thermische Ausdehnung zur Kontrastbewertung.",
-                projTitle: "Kern-Engineering-Pipelines & Systeme",
-                proj1Desc: "Maßgeschneidertes Python-Framework zur Verknüpfung von COMSOL FEA-Ergebnissen mit Zemax OpticStudio über Zernike-Polynomflächenanpassung.",
-                proj2Desc: "Technische Verantwortung für robuste optomechanische Gehäuse für Head-Up-Displays (HUD) und FSO/WSS-Geräte nach strengen Umweltstandards.",
-                contactTitle: "Lassen Sie uns sprechen",
-                contactDesc: "Offen für Principal-Ingenieurpositionen, technische Führungsrollen und innovative Optik-Kooperationen.",
-                btnEmail: "E-Mail senden"
+                heroBadge: "HAUPT-OPTOMECHANIKINGENIEUR",
+                heroTitle1: "Die Zukunft gestalten durch",
+                heroTitle2: "Optisches Design & Multi-Physics Engineering.",
+                heroDesc: "Entwicklung hochleistungsfähiger optomechanischer Systeme unter extremen Umweltlasten mit Zemax OpticStudio, COMSOL Multiphysics und Python-Automatisierungspipelines.",
+                btnSimLink: "Simulation testen",
+                btnContactLink: "Kontakt aufnehmen",
+                aboutTitle: "Grundlagenphysik mit fortgeschrittener Ingenieurskunst verbinden",
+                aboutText1: "Mit umfangreicher Erfahrung als Senior Optical Design Researcher und Principal Engineer bin ich auf die Architektonisierung komplexer optomechanischer Untersysteme wie HUDs, FSO- und WSS-Geräte spezialisiert.",
+                aboutText2: "Als zertifizierter Laserschutzbeauftragter (LSO) mit starkem Fundament in Physik und Maschinenbau entwickle ich automatisierte Pipelines, die Simulationstools mit realer Hardware verbinden.",
+                coreCompetencies: "KERNKOMPETENZEN",
+                expHeading: "Berufserfahrung",
+                exp1Desc: "Technischer Verantwortlicher für optomechanische Untersysteme in Head-Up Displays (HUD), Free Space Optics (FSO) und Wavelength Selective Switching (WSS). Ausgezeichnet mit dem Significant Business Contribution Award.",
+                exp2Desc: "Fokus auf fortschrittliche optische Systementwicklung, maßgeschneiderte optomechanische Architektur und interne RCWA-Modellierungspipelines in Zemax und Python.",
+                simTitle: "MTF-Variation bei Temperatur & Defocus",
+                simDesc: "Nutzen Sie die Regler, um zu analysieren, wie sich die optische Leistung bei Temperaturänderungen und Fokusverschiebungen verändert.",
+                labelTemp: "Temperatur",
+                labelDefocus: "Defokus / Fokusverschiebung",
+                simNote: "Hinweis: Simuliert thermische Ausdehnungskoeffizienten und Brechungsindexänderungen (dn/dT) in Echtzeit.",
+                projHeading: "Optomechanische & Simulations-Pipelines",
+                proj1Title: "Automatisierte Multi-Physics STOP-Pipeline",
+                proj1Desc: "Verknüpfung von COMSOL Multiphysics-Ergebnissen über Python-Skripte mit Zemax OpticStudio Oberflächensag-Gittern mittels Zernike-Polynom-Anpassung.",
+                proj2Title: "Head-Up Display Optomechanische Architektur",
+                proj2Desc: "Technische Leitung und mechanisches Design von HUD-Baugruppen mit großem Sichtfeld unter strengen Vibrations- und Temperaturzyklen (MIL-STD-810G).",
+                contactHeading: "Lassen Sie uns Ihr Projekt besprechen",
+                contactDesc: "Offen für Principal-Positionen im Bereich Optomechanik, technische Beratung oder hochrangige Kooperationen.",
+                contactBtn: "E-Mail senden"
+            },
+            ar: {
+                navAbout: "01. نبذة عني",
+                navExp: "02. الخبرة",
+                navSim: "03. البصريات التفاعلية",
+                navProj: "04. المشاريع",
+                navContact: "05. اتصل بي",
+                heroBadge: "مهندس بصريات وميكانيكا رئيسي",
+                heroTitle1: "صياغة المستقبل من خلال",
+                heroTitle2: "التصميم البصري والهندسة متعددة الفيزياء.",
+                heroDesc: "تطوير أنظمة بصريميكانيكية عالية الأداء تحت أحمال بيئية قاسية باستخدام Zemax OpticStudio و COMSOL Multiphysics وأنابيب أتمتة Python.",
+                btnSimLink: "جرب المحاكاة التفاعلية",
+                btnContactLink: "تواصل معي",
+                aboutTitle: "الربط بين الفيزياء الأساسية والهندسة المتقدمة",
+                aboutText1: "مع خبرة واسعة كباحث تصميم بصري أول ومهندس رئيسي، أختص في هندسة الأنظمة الفرعية البصريميكانيكية المعقدة بما في ذلك شاشات العرض الأمامية (HUD) وأجهزة الاتصال الضوئي الفضائي (FSO).",
+                aboutText2: "بصفتي معتمداً كمسؤول سلامة ليزر (LSO) مع خلفية قوية في الفيزياء والهندسة الميكانيكية، أقوم بنسج خطوط أتمتة تربط أدوات المحاكاة بتنفيذ الأجهزة الواقعية.",
+                coreCompetencies: "الكفاءات الأساسية",
+                expHeading: "الخبرة المهنية",
+                exp1Desc: "مسؤول تقني عن الأنظمة الفرعية البصريميكانيكية في شاشات العرض الأمامية (HUD) وأنظمة تبديل الطول الموجي (WSS). حصلت على جائزة المساهمة التجارية الكبرى.",
+                exp2Desc: "التركيز على تطوير الأنظمة البصرية المتقدمة، والهندسة البصريميكانيكية المخصصة، وبناء خطوط نمذجة RCWA الداخلية في Zemax و Python.",
+                simTitle: "تغير وظيفة نقل التباين (MTF) مع الحرارة والتركيز",
+                simDesc: "استخدم أشرطة التمرير لتحليل كيفية تغير الأداء البصري عبر التغيرات الحرارية وإزاحات مستوى التركيز.",
+                labelTemp: "درجة الحرارة",
+                labelDefocus: "إزاحة التركيز (Defocus)",
+                simNote: "ملاحظة: محاكاة معاملات التمدد الحراري وتغيرات معامل الانكسار في الوقت الفعلي.",
+                projHeading: "الخطوط البصريميكانيكية وخطوط المحاكاة",
+                proj1Title: "خط أنابيب STOP متعدد الفيزياء الآلي",
+                proj1Desc: "ربط مخرجات التحليل الحراري الهيكلي عبر نصوص Python في شبكات سطح Zemax باستخدام تقريب كثيرات حدود زيرنيك.",
+                proj2Title: "هندسة العرض البصري الأمامي (HUD)",
+                proj2Desc: "القيادة التقنية والتصميم الميكانيكي لتجمعات HUD البصرية لضمان المحاذاة المستقرة تحت الاهتزازات الشديدة والدورات الحرارية.",
+                contactHeading: "دعنا نناقش مشروعك القادم",
+                contactDesc: "منفتح على فرص هندسة البصريات والميكانيكا الرئيسية، الاستشارات التقنية، أو التصاميم التعاونية المتقدمة.",
+                contactBtn: "إرسال بريد إلكتروني"
             }
         };
 
-        let currentLang = 'en';
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'de' : 'en';
-            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'DE / EN' : 'EN / DE';
-            
-            const t = translations[currentLang];
+            // Update Active Button Styles
+            ['en', 'de', 'ar'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (l === lang) {
+                    btn.className = "px-2 py-1 rounded bg-sky-500 text-slate-950 font-bold transition";
+                } else {
+                    btn.className = "px-2 py-1 rounded text-slate-400 hover:text-white transition";
+                }
+            });
+
+            // Update Texts
+            const t = translations[lang];
             document.querySelector('.nav-about').textContent = t.navAbout;
-            document.querySelector('.nav-expertise').textContent = t.navExp;
+            document.querySelector('.nav-exp').textContent = t.navExp;
             document.querySelector('.nav-sim').textContent = t.navSim;
-            document.querySelector('.nav-projects').textContent = t.navProj;
+            document.querySelector('.nav-proj').textContent = t.navProj;
             document.querySelector('.nav-contact').textContent = t.navContact;
+
             document.getElementById('hero-badge').textContent = t.heroBadge;
-            document.getElementById('hero-title').innerHTML = t.heroTitle;
+            document.getElementById('hero-title-1').textContent = t.heroTitle1;
+            document.getElementById('hero-title-2').textContent = t.heroTitle2;
             document.getElementById('hero-desc').textContent = t.heroDesc;
-            document.getElementById('btn-sim').textContent = t.btnSim;
-            document.getElementById('btn-contact').textContent = t.btnContact;
-            document.getElementById('about-h2').textContent = t.aboutH2;
-            document.getElementById('about-p1').textContent = t.aboutP1;
-            document.getElementById('about-p2').textContent = t.aboutP2;
-            document.getElementById('label-loc').textContent = t.lblLoc;
-            document.getElementById('label-core').textContent = t.lblCore;
-            document.getElementById('label-tools').textContent = t.lblTools;
-            document.getElementById('label-lang').textContent = t.lblLang;
+            document.getElementById('btn-sim-link').textContent = t.btnSimLink;
+            document.getElementById('btn-contact-link').textContent = t.btnContactLink;
+
+            document.getElementById('about-title').textContent = t.aboutTitle;
+            document.getElementById('about-text-1').textContent = t.aboutText1;
+            document.getElementById('about-text-2').textContent = t.aboutText2;
+            document.getElementById('core-competencies').textContent = t.coreCompetencies;
+
+            document.getElementById('exp-heading').textContent = t.expHeading;
+            document.getElementById('exp-1-desc').textContent = t.exp1Desc;
+            document.getElementById('exp-2-desc').textContent = t.exp2Desc;
+
             document.getElementById('sim-title').textContent = t.simTitle;
             document.getElementById('sim-desc').textContent = t.simDesc;
-            document.getElementById('lbl-temp').textContent = t.lblTemp;
-            document.getElementById('lbl-defocus').textContent = t.lblDefocus;
-            document.getElementById('sim-note').innerHTML = t.simNote;
-            document.getElementById('proj-title').textContent = t.projTitle;
-            document.getElementById('proj1-desc').textContent = t.proj1Desc;
-            document.getElementById('proj2-desc').textContent = t.proj2Desc;
-            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('label-temp').textContent = t.labelTemp;
+            document.getElementById('label-defocus').textContent = t.labelDefocus;
+            document.getElementById('sim-note').innerHTML = `<span class="text-sky-400 font-semibold">${lang === 'ar' ? 'ملاحظة:' : (lang === 'de' ? 'Hinweis:' : 'Note:')}</span> ${t.simNote.replace('Note: ', '')}`;
+
+            document.getElementById('proj-heading').textContent = t.projHeading;
+            document.getElementById('proj-1-title').textContent = t.proj1Title;
+            document.getElementById('proj-1-desc').textContent = t.proj1Desc;
+            document.getElementById('proj-2-title').textContent = t.proj2Title;
+            document.getElementById('proj-2-desc').textContent = t.proj2Desc;
+
+            document.getElementById('contact-heading').textContent = t.contactHeading;
             document.getElementById('contact-desc').textContent = t.contactDesc;
+            document.getElementById('contact-btn').textContent = t.contactBtn;
         }
 
         // Chart.js Setup
@@ -273,7 +355,7 @@
             data: {
                 labels: spatialFrequencies,
                 datasets: [{
-                    label: 'Modulation Transfer Function (MTF)',
+                    label: 'MTF (Modulation Transfer Function)',
                     data: calculateMTF(20, 0),
                     borderColor: '#38bdf8',
                     backgroundColor: 'rgba(56, 189, 248, 0.1)',
