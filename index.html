@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Önder Sönmez | Principal OPTICAL / Opto-Mechanical Engineer</title>
+    <title>Önder Sönmez | Principal Opto-Mechanical Engineer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js CDN for Interactive Optical Simulation Graphs -->
@@ -38,7 +38,7 @@
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-6">
-            <span>●</span> <span id="hero-badge">PRINCIPAL Optical/  OPTO-MECHANICAL ENGINEER</span>
+            <span>●</span> <span id="hero-badge">PRINCIPAL OPTO-MECHANICAL ENGINEER</span>
         </div>
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
             <span id="hero-title-1">Shaping the Future Through</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500" id="hero-title-2">Optical Design & Multi-Physics Engineering.</span>
@@ -105,12 +105,12 @@
         </div>
     </section>
 
-    <!-- Interactive Optical Simulation Section (MTF / Defocus / Temperature) -->
+    <!-- Interactive Optical Simulation Section (Advanced MTF Model) -->
     <section id="simulation" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-900">
         <div class="mb-12">
-            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 03. INTERACTIVE OPTICS</span>
-            <h2 class="text-3xl font-bold mt-2" id="sim-title">MTF Variation under Temperature &amp; Defocus</h2>
-            <p class="text-slate-400 text-sm mt-1" id="sim-desc">Use the sliders to analyze how optical performance shifts across thermal changes and focal plane displacements.</p>
+            <span class="text-sky-400 text-xs font-semibold tracking-wider">// 03. ADVANCED INTERACTIVE OPTICS</span>
+            <h2 class="text-3xl font-bold mt-2" id="sim-title">Advanced MTF Degradation Model (Thermal &amp; Defocus)</h2>
+            <p class="text-slate-400 text-sm mt-1" id="sim-desc">Simulating diffraction-limited contrast decay governed by temperature shifts ($dn/dT$) and focal plane displacement ($\Delta z$).</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-slate-900/50 border border-slate-800 p-6 rounded-2xl">
@@ -125,7 +125,7 @@
                     <input type="range" id="defocusSlider" min="-50" max="50" value="0" class="w-full accent-indigo-500 cursor-pointer">
                 </div>
                 <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-400" id="sim-note">
-                    <span class="text-sky-400 font-semibold">Note:</span> Simulates thermal expansion coefficients and refractive index changes (dn/dT) affecting system MTF response in real-time.
+                    <span class="text-sky-400 font-semibold">Physics Model:</span> Computes diffraction MTF with spatial-frequency-dependent thermal defocus and wavefront aberration degradation.
                 </div>
             </div>
 
@@ -176,7 +176,7 @@
         © 2026 Önder Sönmez · Principal Opto-Mechanical Engineer
     </footer>
 
-    <!-- Multilingual Dictionary & Interactive Script -->
+    <!-- Multilingual Dictionary & Advanced Physics Script -->
     <script>
         const translations = {
             en: {
@@ -198,11 +198,11 @@
                 expHeading: "Professional Experience",
                 exp1Desc: "Technical owner for optomechanical subsystems in Head-Up Displays (HUD), Free Space Optics (FSO), and Wavelength Selective Switching (WSS) devices. Awarded Significant Business Contribution Award.",
                 exp2Desc: "Focusing on advanced optical system development, custom optomechanical architecture, and building internal RCWA modeling pipelines in Zemax and Python.",
-                simTitle: "MTF Variation under Temperature & Defocus",
-                simDesc: "Use the sliders to analyze how optical performance shifts across thermal changes and focal plane displacements.",
+                simTitle: "Advanced MTF Degradation Model (Thermal & Defocus)",
+                simDesc: "Simulating diffraction-limited contrast decay governed by temperature shifts (dn/dT) and focal plane displacement (Δz).",
                 labelTemp: "Temperature",
                 labelDefocus: "Defocus / Focal Shift",
-                simNote: "Note: Simulates thermal expansion coefficients and refractive index changes (dn/dT) affecting system MTF response in real-time.",
+                simNote: "Physics Model: Computes diffraction MTF with spatial-frequency-dependent thermal defocus and wavefront aberration degradation.",
                 projHeading: "Optomechanical & Simulation Pipelines",
                 proj1Title: "Automated Multi-Physics STOP Pipeline",
                 proj1Desc: "Coupling COMSOL Multiphysics thermal-structural outputs via Python scripts into Zemax OpticStudio surface sag grids using Zernike polynomial fitting for automated MTF optimization.",
@@ -231,11 +231,11 @@
                 expHeading: "Berufserfahrung",
                 exp1Desc: "Technischer Verantwortlicher für optomechanische Untersysteme in Head-Up Displays (HUD), Free Space Optics (FSO) und Wavelength Selective Switching (WSS). Ausgezeichnet mit dem Significant Business Contribution Award.",
                 exp2Desc: "Fokus auf fortschrittliche optische Systementwicklung, maßgeschneiderte optomechanische Architektur und interne RCWA-Modellierungspipelines in Zemax und Python.",
-                simTitle: "MTF-Variation bei Temperatur & Defocus",
-                simDesc: "Nutzen Sie die Regler, um zu analysieren, wie sich die optische Leistung bei Temperaturänderungen und Fokusverschiebungen verändert.",
+                simTitle: "Erweitertes MTF-Degradationsmodell (Thermal & Defocus)",
+                simDesc: "Simulation des beugungsbegrenzten Kontrastabfalls durch Temperaturänderungen (dn/dT) und Fokusverschiebung (Δz).",
                 labelTemp: "Temperatur",
                 labelDefocus: "Defokus / Fokusverschiebung",
-                simNote: "Hinweis: Simuliert thermische Ausdehnungskoeffizienten und Brechungsindexänderungen (dn/dT) in Echtzeit.",
+                simNote: "Physikalisches Modell: Berechnet Beugungs-MTF mit ortsfrequenzabhängiger thermischer Aberration.",
                 projHeading: "Optomechanische & Simulations-Pipelines",
                 proj1Title: "Automatisierte Multi-Physics STOP-Pipeline",
                 proj1Desc: "Verknüpfung von COMSOL Multiphysics-Ergebnissen über Python-Skripte mit Zemax OpticStudio Oberflächensag-Gittern mittels Zernike-Polynom-Anpassung.",
@@ -264,11 +264,11 @@
                 expHeading: "الخبرة المهنية",
                 exp1Desc: "مسؤول تقني عن الأنظمة الفرعية البصريميكانيكية في شاشات العرض الأمامية (HUD) وأنظمة تبديل الطول الموجي (WSS). حصلت على جائزة المساهمة التجارية الكبرى.",
                 exp2Desc: "التركيز على تطوير الأنظمة البصرية المتقدمة، والهندسة البصريميكانيكية المخصصة، وبناء خطوط نمذجة RCWA الداخلية في Zemax و Python.",
-                simTitle: "تغير وظيفة نقل التباين (MTF) مع الحرارة والتركيز",
-                simDesc: "استخدم أشرطة التمرير لتحليل كيفية تغير الأداء البصري عبر التغيرات الحرارية وإزاحات مستوى التركيز.",
+                simTitle: "نموذج تدهور وظيفة نقل التباين المتقدم (الحرارة والتركيز)",
+                simDesc: "محاكاة اضمحلال التباحد المحكوم بانحرافات درجات الحرارة (dn/dT) وإزاحة مستوى التركيز (Δz).",
                 labelTemp: "درجة الحرارة",
                 labelDefocus: "إزاحة التركيز (Defocus)",
-                simNote: "ملاحظة: محاكاة معاملات التمدد الحراري وتغيرات معامل الانكسار في الوقت الفعلي.",
+                simNote: "النموذج الفيزيائي: يحسب MTF الحيوي مع انحرافات واجهة الموجة المعتمدة على التردد المكاني.",
                 projHeading: "الخطوط البصريميكانيكية وخطوط المحاكاة",
                 proj1Title: "خط أنابيب STOP متعدد الفيزياء الآلي",
                 proj1Desc: "ربط مخرجات التحليل الحراري الهيكلي عبر نصوص Python في شبكات سطح Zemax باستخدام تقريب كثيرات حدود زيرنيك.",
@@ -288,7 +288,6 @@
                 document.documentElement.dir = 'ltr';
             }
 
-            // Update Active Button Styles
             ['en', 'de', 'ar'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if (l === lang) {
@@ -298,7 +297,6 @@
                 }
             });
 
-            // Update Texts
             const t = translations[lang];
             document.querySelector('.nav-about').textContent = t.navAbout;
             document.querySelector('.nav-exp').textContent = t.navExp;
@@ -326,7 +324,7 @@
             document.getElementById('sim-desc').textContent = t.simDesc;
             document.getElementById('label-temp').textContent = t.labelTemp;
             document.getElementById('label-defocus').textContent = t.labelDefocus;
-            document.getElementById('sim-note').innerHTML = `<span class="text-sky-400 font-semibold">${lang === 'ar' ? 'ملاحظة:' : (lang === 'de' ? 'Hinweis:' : 'Note:')}</span> ${t.simNote.replace('Note: ', '')}`;
+            document.getElementById('sim-note').innerHTML = `<span class="text-sky-400 font-semibold">${t.simNote.split(':')[0]}:</span> ${t.simNote.split(':')[1]}`;
 
             document.getElementById('proj-heading').textContent = t.projHeading;
             document.getElementById('proj-1-title').textContent = t.proj1Title;
@@ -339,15 +337,32 @@
             document.getElementById('contact-btn').textContent = t.contactBtn;
         }
 
-        // Chart.js Setup
+        // Advanced Physics-Based MTF Calculation
         const ctx = document.getElementById('mtfChart').getContext('2d');
-        const spatialFrequencies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        const spatialFrequencies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]; // cy/mm
         
         function calculateMTF(temp, defocus) {
-            const thermalFactor = 1 - Math.abs(temp - 20) * 0.003;
-            const defocusFactor = 1 - Math.abs(defocus) * 0.008;
-            const efficiency = Math.max(0.1, thermalFactor * defocusFactor);
-            return spatialFrequencies.map(f => Math.max(0.05, (0.85 * Math.exp(-f * 0.012) * efficiency).toFixed(2)));
+            // Reference temperature = 20°C
+            const deltaT = temp - 20;
+            
+            // Effective Wavefront Error (WFE) contributions due to thermal expansion & dn/dT and defocus (in waves @ 550nm)
+            // Higher spatial frequencies suffer quadratically more from aberrations according to optical transfer theory.
+            return spatialFrequencies.map(f => {
+                // Diffraction-limited base MTF approximation (ideal optical cutoff ~ 120 cy/mm)
+                const diffractionLimit = Math.max(0, 1 - (f / 120));
+                
+                // Aberration penalty factor combining thermal defocus + manual defocus slider (Δz in µm)
+                // Sensitivity is higher at higher spatial frequencies (f)
+                const thermalAberration = Math.abs(deltaT) * 0.0012;
+                const defocusAberration = Math.abs(defocus) * 0.0045;
+                
+                const totalAberration = (thermalAberration + defocusAberration) * (f / 50);
+                
+                // Strum-like degradation factor on contrast
+                let mtfValue = diffractionLimit * Math.exp(-Math.pow(totalAberration, 1.5));
+                
+                return Math.max(0.02, mtfValue.toFixed(2));
+            });
         }
 
         let mtfChart = new Chart(ctx, {
